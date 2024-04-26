@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+#! /usr/bin/env python3
+# coding=utf-8
 
 import os
 import errno
@@ -272,9 +273,9 @@ def main(argv):
     fsserv.conf['user'] = ('user' in fsserv.fuse_args.optlist)
 
     try:
-        print fsserv.fuse_args.mount_expected()
+        print(fsserv.fuse_args.mount_expected())
     except OSError:
-        print >> sys.stderr, "Mount expected failed"
+        print("Mount expected failed", file=sys.stderr)
         sys.exit(-1)
     fsserv.main()
 
